@@ -11,7 +11,7 @@ namespace NodeCanvas.Tasks.Actions
 
         public float rotationSpeed = 180f;
         public float returnRotation = 180f;
-        public float coolDuration = 5f;
+        public float coolDuration = 1f;
 
         private float rotatedAmount = 0f;
         private bool finishedTurningBack = false;

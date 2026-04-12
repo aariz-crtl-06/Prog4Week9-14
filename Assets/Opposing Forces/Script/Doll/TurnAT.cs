@@ -17,7 +17,7 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute() {
             source = agent.GetComponent<AudioSource>();
             source.PlayOneShot(song);
-            timer.value = 5f;
+            timer.value = 5.2f;
 		}
 
 	

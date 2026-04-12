@@ -1,3 +1,4 @@
+
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
@@ -9,42 +10,40 @@ namespace NodeCanvas.Tasks.Actions
         public BBParameter<Transform> playerPos;
         public BBParameter<Transform> dollRot;
         public BBParameter<float> observeTimer;
+        public BBParameter<bool> isObserving;
+        public BBParameter<float> movements;
 
         private Vector3 lastPlayPos = Vector3.zero;
 
         public float rotationSpeed = 540f;
         public float targetRotation = 180f;
         public float observeDuration = 4f;
+        public float moveThreshold = 0.05f;
 
         private float rotatedAmount = 0f;
-        private bool isObserving = false;
+        private bool movementAlreadyCounted = false;
 
         protected override void OnExecute()
         {
-            if (playerPos.value != null)
-            {
-                lastPlayPos = playerPos.value.position;
-            }
-
             rotatedAmount = 0f;
-            isObserving = false;
+            isObserving.value = false;
             observeTimer.value = observeDuration;
+            movementAlreadyCounted = false;
         }
 
         protected override void OnUpdate()
         {
-            if (dollRot.value == null)
+            if (dollRot.value == null || playerPos.value == null)
             {
                 EndAction(false);
                 return;
             }
 
-            // Phase 1: rotate until target rotation is reached
-            if (!isObserving)
+            // Rotate until target rotation is reached
+            if (!isObserving.value)
             {
                 float step = rotationSpeed * Time.deltaTime;
 
-                // prevent overshooting
                 if (rotatedAmount + step > targetRotation)
                 {
                     step = targetRotation - rotatedAmount;
@@ -55,23 +54,40 @@ namespace NodeCanvas.Tasks.Actions
 
                 if (rotatedAmount >= targetRotation)
                 {
-                    isObserving = true;
+                    isObserving.value = true;
                     observeTimer.value = observeDuration;
+                    lastPlayPos = playerPos.value.position;
+                    movementAlreadyCounted = false; // new observe session starts here
                 }
 
                 return;
             }
 
-            // Phase 2: stay still and wait
-            if (observeTimer.value > 0f)
+            // Observe phase
+            observeTimer.value -= Time.deltaTime;
+
+            Vector3 currentPos = playerPos.value.position;
+            Vector3 storedPos = lastPlayPos;
+
+            currentPos.y = 0f;
+            storedPos.y = 0f;
+
+            if (!movementAlreadyCounted &&
+                Vector3.Distance(storedPos, currentPos) > moveThreshold)
             {
-                observeTimer.value -= Time.deltaTime;
+                movements.value += 1f;
+                movementAlreadyCounted = true;
             }
 
             if (observeTimer.value <= 0f)
             {
                 EndAction(true);
             }
+        }
+
+        protected override void OnStop()
+        {
+            isObserving.value = false;
         }
     }
 }
