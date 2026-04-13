@@ -14,6 +14,8 @@ namespace NodeCanvas.Tasks.Actions {
         public AudioClip clip1;
         public AudioClip clip2;
         public AudioClip clip3;
+
+        //Once the player is caught 3 times, play all the sounds to warn the player that they are about to be eliminated, and end the task
         protected override void OnExecute()
         {
             if (source1 != null && clip1 != null)

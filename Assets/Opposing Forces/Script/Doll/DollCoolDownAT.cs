@@ -18,6 +18,7 @@ namespace NodeCanvas.Tasks.Actions
 
         protected override void OnExecute()
         {
+            //Reset variables for the cooldown phase
             rotatedAmount = 0f;
             finishedTurningBack = false;
             coolTimer.value = coolDuration;
@@ -25,13 +26,14 @@ namespace NodeCanvas.Tasks.Actions
 
         protected override void OnUpdate()
         {
+            //safety check
             if (dollRot.value == null)
             {
                 EndAction(false);
                 return;
             }
 
-            // Phase 1: rotate back
+            //rotate back
             if (!finishedTurningBack)
             {
                 float step = rotationSpeed * Time.deltaTime;
@@ -41,7 +43,7 @@ namespace NodeCanvas.Tasks.Actions
                     step = returnRotation - rotatedAmount;
                 }
 
-                // negative step so it turns back the other way
+                //negative step so it turns back the other way
                 dollRot.value.Rotate(0f, -step, 0f);
                 rotatedAmount += step;
 
@@ -53,7 +55,7 @@ namespace NodeCanvas.Tasks.Actions
                 return;
             }
 
-            // Phase 2: cooldown while staying still
+            //cooldown while staying still
             if (coolTimer.value > 0f)
             {
                 coolTimer.value -= Time.deltaTime;

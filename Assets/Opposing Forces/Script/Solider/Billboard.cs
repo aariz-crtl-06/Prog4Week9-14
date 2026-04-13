@@ -5,6 +5,7 @@ public class Billboard : MonoBehaviour
 
     private Transform cam;
 
+    //Billboard script to make the solider sprite always face the camera so it's position is always clear to the player
     private void Start()
     {
         cam = Camera.main.transform;

@@ -25,6 +25,7 @@ namespace NodeCanvas.Tasks.Actions
 
         protected override void OnExecute()
         {
+            //reset variables for the observe phase
             rotatedAmount = 0f;
             isObserving.value = false;
             observeTimer.value = observeDuration;
@@ -33,13 +34,14 @@ namespace NodeCanvas.Tasks.Actions
 
         protected override void OnUpdate()
         {
+            //Safety check
             if (dollRot.value == null || playerPos.value == null)
             {
                 EndAction(false);
                 return;
             }
 
-            // Rotate until target rotation is reached
+            // Rotate until target rotation is reached if not obsreving yet
             if (!isObserving.value)
             {
                 float step = rotationSpeed * Time.deltaTime;
@@ -52,6 +54,7 @@ namespace NodeCanvas.Tasks.Actions
                 dollRot.value.Rotate(0f, step, 0f);
                 rotatedAmount += step;
 
+                //If the rotation is at the target, start observing
                 if (rotatedAmount >= targetRotation)
                 {
                     isObserving.value = true;
@@ -72,19 +75,21 @@ namespace NodeCanvas.Tasks.Actions
             currentPos.y = 0f;
             storedPos.y = 0f;
 
-            if (!movementAlreadyCounted &&
-                Vector3.Distance(storedPos, currentPos) > moveThreshold)
+            //If a movement hasn't been counted yet, and the player has moved more than the threshold, count a movement
+            if (!movementAlreadyCounted && Vector3.Distance(storedPos, currentPos) > moveThreshold)
             {
                 movements.value += 1f;
                 movementAlreadyCounted = true;
             }
 
+            //Once observing timer is done, end the task
             if (observeTimer.value <= 0f)
             {
                 EndAction(true);
             }
         }
 
+        //Stops observing at stop so it doesn't count any more movements
         protected override void OnStop()
         {
             isObserving.value = false;

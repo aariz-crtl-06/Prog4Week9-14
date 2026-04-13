@@ -11,6 +11,8 @@ namespace NodeCanvas.Tasks.Actions {
         public AudioSource source;
 		public GameObject panel;
         public AudioClip clip;
+
+        //Once player is reached, play the sound and show the panel, emulating the player being elimated
         protected override void OnExecute() {
             panel.SetActive(true);
             if (source != null && clip != null)

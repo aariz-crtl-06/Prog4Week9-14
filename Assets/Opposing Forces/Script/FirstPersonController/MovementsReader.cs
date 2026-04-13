@@ -4,6 +4,7 @@ using UnityEngine.Rendering;
 
 public class MovementReader : MonoBehaviour
 {
+    //This is for the UI elements that show the player how many "chances" they have left to complete red light green light before being eliminated.
     public Blackboard blackboard;
 
     public float movements;
@@ -14,6 +15,7 @@ public class MovementReader : MonoBehaviour
 
     void Update()
     {
+        //Tracks the values from the doll girl's blackboard variables
        movements = blackboard.GetVariableValue<float>("movements");
 
         if (movements == 0)

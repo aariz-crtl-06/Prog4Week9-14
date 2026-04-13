@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class playerMovement : MonoBehaviour
 {
+    //Player controller to help the player move, sprint, jump, and look around
     public Camera playerCamera;
     public float walkSpeed = 7f;
     public float runSpeed = 10f;

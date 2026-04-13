@@ -15,6 +15,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		
 		protected override void OnExecute() {
+			//Gather audio, play it, and set the timer
             source = agent.GetComponent<AudioSource>();
             source.PlayOneShot(song);
             timer.value = 5.2f;
@@ -24,7 +25,8 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnUpdate() {
             timer.value-= Time.deltaTime;
 
-			if (timer.value <= 0) {
+            //Once the timer is done, end the task
+            if (timer.value <= 0) {
 				EndAction(true);
             }
         }

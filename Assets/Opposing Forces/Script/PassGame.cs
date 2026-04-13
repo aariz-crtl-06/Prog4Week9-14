@@ -8,6 +8,7 @@ public class PassGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Checks if the player passes the finish line, ending the game
         if (other.CompareTag("Player"))
         {
             panel.SetActive(true);

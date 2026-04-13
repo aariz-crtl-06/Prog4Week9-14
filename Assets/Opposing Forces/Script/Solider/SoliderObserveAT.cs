@@ -15,6 +15,7 @@ namespace NodeCanvas.Tasks.Actions
 
         protected override void OnExecute()
         {
+            //Gather audio and reset the strike counter
             source = agent.GetComponent<AudioSource>();
             lastStrikePlayed = 0;
         }
@@ -27,6 +28,7 @@ namespace NodeCanvas.Tasks.Actions
                 return;
             }
 
+            //Get the movements tracked by the girl doll from her blackboard
             float movements = targetBlackboard.GetVariableValue<float>("movements");
 
             // Strike 1

@@ -9,7 +9,7 @@ public class CamHolder : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    // Hold the camera
     void Update()
     {
         transform.position = cameraPosition.position;
