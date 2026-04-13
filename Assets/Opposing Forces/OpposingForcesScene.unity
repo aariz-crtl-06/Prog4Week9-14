@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NodeCanvas::NodeCanvas.BehaviourTrees.BehaviourTreeOwner
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":563.0,"y":249.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"_action":{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_position":{"x":338.0,"y":400.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"1"},{"_action":{"timer":{"_name":"timer","_targetVariableID":"cc3b8107-f554-496c-80af-d26b7b551caf"},"song":1,"$type":"NodeCanvas.Tasks.Actions.TurnAT"},"_position":{"x":483.0,"y":399.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"_action":{"playerPos":{"_name":"Player
+  _boundGraphSerialization: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":563.0,"y":249.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"_action":{"waitTime":{"_value":1.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},"_position":{"x":338.0,"y":400.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"1"},{"_action":{"timer":{"_name":"timer","_targetVariableID":"cc3b8107-f554-496c-80af-d26b7b551caf"},"song":1,"$type":"NodeCanvas.Tasks.Actions.TurnAT"},"_position":{"x":482.0,"y":399.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"_action":{"playerPos":{"_name":"Player
     Pos","_targetVariableID":"199e30bf-bacc-47e6-a2c4-142e5c19b89e"},"dollRot":{"_name":"Doll
     Rot","_targetVariableID":"1bc7baa4-682a-4eac-ba3d-6612bc9f6271"},"observeTimer":{"_name":"Observe
     Timer","_targetVariableID":"514ea3fa-8594-4ea7-81c5-ac5ea8a2b6d4"},"isObserving":{"_name":"is
@@ -397,7 +397,7 @@ MonoBehaviour:
     _version: 3.33
     _category: 
     _comments: 
-    _translation: {x: 146, y: 22}
+    _translation: {x: 126, y: 30}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
@@ -1623,7 +1623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2112063a7adf6c4f8f3d8fd05285759, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.12
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2112063a7adf6c4f8f3d8fd05285759, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3301,7 +3301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: NodeCanvas::NodeCanvas.StateMachines.FSMOwner
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"targetBlackboard":1,"song":2,"$type":"NodeCanvas.Tasks.Actions.SoliderObserveAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Observe","_position":{"x":632.0,"y":374.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"source1":3,"source2":4,"source3":5,"clip1":6,"clip2":7,"clip3":8,"$type":"NodeCanvas.Tasks.Actions.SoliderConfrontationAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Approach","_position":{"x":845.0,"y":429.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"target":{"_value":9},"speed":{"_value":12.0},"stopDistance":{"_value":5.0},"waitActionFinish":true,"$type":"NodeCanvas.Tasks.Actions.MoveTowards"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":694.0,"y":593.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"source":10,"panel":11,"clip":12,"$type":"NodeCanvas.Tasks.Actions.KillSoliderAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":964.0,"y":641.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"targetBlackboard":1,"song":2,"$type":"NodeCanvas.Tasks.Actions.SoliderObserveAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Observe","_position":{"x":632.0,"y":374.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"source1":3,"source2":4,"source3":5,"clip1":6,"clip2":7,"clip3":8,"$type":"NodeCanvas.Tasks.Actions.SoliderConfrontationAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Approach","_position":{"x":845.0,"y":428.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"target":{"_value":9},"speed":{"_value":12.0},"stopDistance":{"_value":5.0},"waitActionFinish":true,"$type":"NodeCanvas.Tasks.Actions.MoveTowards"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Attack","_position":{"x":693.0,"y":565.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"source":10,"panel":11,"clip":12,"$type":"NodeCanvas.Tasks.Actions.KillSoliderAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Eliminate","_position":{"x":965.0,"y":641.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 89271340}
@@ -3320,7 +3320,7 @@ MonoBehaviour:
     _version: 3.33
     _category: 
     _comments: 
-    _translation: {x: -72, y: -99}
+    _translation: {x: -287, y: -146}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0

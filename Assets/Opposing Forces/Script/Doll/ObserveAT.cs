@@ -57,7 +57,7 @@ namespace NodeCanvas.Tasks.Actions
                     isObserving.value = true;
                     observeTimer.value = observeDuration;
                     lastPlayPos = playerPos.value.position;
-                    movementAlreadyCounted = false; // new observe session starts here
+                    movementAlreadyCounted = false;
                 }
 
                 return;
